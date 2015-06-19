@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', [
-    'ngRoute',
-    'artistControllers'
+  'ngRoute',
+  'app'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider) {
@@ -10,9 +10,13 @@ myApp.config(['$routeProvider', function($routeProvider) {
         controller: 'ListController'
     }).
     when('/details/:itemId',{
-    	templateUrl: 'partials/details.html',
-    	controller: 'DetailsController'
+      templateUrl: 'partials/details.html',
+      controller: 'DetailsController'
     }).
+    when('/soundcloud', {
+      templateUrl: 'partials/soundcloud.html',
+      controller: 'SoundCloudController'
+    }). 
     otherwise({
         redirectTo: '/list'
     });
