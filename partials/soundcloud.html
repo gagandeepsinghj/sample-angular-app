@@ -1,0 +1,21 @@
+<div class="container tracks">
+  
+  <ul>
+    <li data-ng-repeat='track in tracks'>
+      
+      <div data-ng-show='track.editable'>
+        <input type="text" data-ng-model='track.title' >
+        <button data-ng-click='updateTrack(track)'>update</button>
+      </div>
+
+      <div data-ng-show='!track.editable'>
+        <h5 data-ng-click='track.editable = true'>{{track.title}}</h5> 
+      </div>
+
+      <!-- (<a href='' data-ng-click='updateTrack(track)'>update</a>) -->
+      <img data-ng-src="{{track.user.avatar_url}}" alt="" >
+      <i>{{track.description}}</i>
+    </li>
+  </ul>
+
+</div>
